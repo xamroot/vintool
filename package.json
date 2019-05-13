@@ -16,13 +16,17 @@
   },
   "proxy": "http://localhost:3000",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "jspdf": "https://github.com/MrRio/jsPDF/#76edb3387cda3d5292e212765134b06150030364",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://maxxdmg.github.io/vintool",
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "routing": "0.0.2"
   }
 }
