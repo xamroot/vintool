@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar/Navbar';
 import registerServiceWorker from './registerServiceWorker';
 
 const routing = (
-	<Router>
+	<Router basename={'/'}>
 		<div>
 			<Navbar />
 			<Switch>
