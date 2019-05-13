@@ -6,14 +6,16 @@ import App from './Containers/App';
 import Settings from './Containers/Settings';
 import Navbar from './Components/Navbar/Navbar';
 import registerServiceWorker from './registerServiceWorker';
+	
+	console.log(process.env.PUBLIC_URL);
 
 const routing = (
-	<Router basename={'/vintool'}>
+	<Router basename={process.env.PUBLIC_URL}>
 		<div>
 			<Navbar />
 			<Switch>
 				<Route exact path='/' component={App} />
-				<Route path='/settings' component={Settings} />
+				<Route path='/settings/' component={Settings} />
 			</Switch>
 		</div>
 	</Router>
