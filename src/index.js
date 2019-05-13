@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar/Navbar';
 import registerServiceWorker from './registerServiceWorker';
 
 const routing = (
-	<Router basename={'/'}>
+	<Router basename={'/vintool'}>
 		<div>
 			<Navbar />
 			<Switch>
