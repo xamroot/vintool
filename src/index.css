@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #e6ecf0;
+}
+
+/* Nav */
+
+.navbar {
+	margin-bottom: 1rem;
+	background-color: #fff;
+}
+
+.navbar a {
+	font-weight: bold;
+	color: black;
+}
+
+.navbar a:hover {
+	color: #efe932;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.navbar-brand > img {
+	display: inline-block;
+	margin: 0px;
+	width: 50px;
+	margin-right: 5px;
+	border-radius: 2px;
+}
+
+ul.nav.navbar-nav li {
+	margin: 0 0.5rem;
+}
+
+.onboarding > .navbar {
+	backgrouund-image: ;
+}
+
+.home-hero {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-style: bold;
+	display: flex;
+	flex-direction: column;
+	background-image: url('http://getpaving.com/images/pages/media/Gallery/driveway/driveway-replace-7.jpg');
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	z-index: -1;
+	text-align: center;
+	padding: 1rem;
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	text-shadow: 0px 0px 8px #66757f;
+}
+
+#projects .list-group-item {
+	display: flex;
+	align-items: flex-start;
+	padding: 7px 20px 12px;
+	width: 100%;
+	margin: 10px;
+	box-shadow: 0.5px 1px 3px 0px black;
+}
+
+#project-timeline {
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.timeline-image {
+	border-radius: 50px;
+	height: 48px;
+	width: 48px;
+	margin: 2px 30px 10px 10px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+a.btn.btn-danger,
+a.btn.btn-danger:hover {
+	color: white;
+}
+

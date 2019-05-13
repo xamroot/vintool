@@ -1,0 +1,73 @@
+/***********************UNIVERSAL STYLES***********************/
+.container {
+	display: flex;
+	width: 100%;
+}
+
+.space {
+	padding: 10px;
+}
+
+.panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-content: start;
+	aligen-items: start;
+	width: 95%;
+	margin: 10px;
+	padding: 5px;
+}
+
+.panel-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 5px;
+	margin: 10px;
+}
+
+.subcontainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 50%;
+	padding: 5px;
+	margin: 10px;
+}
+
+.header {
+	margin: 5px;
+	margin-left: 0px;
+	font-size: 30px;
+	text-align: left;
+}
+
+.output {
+	margin:1px;
+}
+
+/***********************LINEITEM STYLES***********************/
+.container-lineitem {
+	display:flex;
+	flex-direction: row;
+}
+.items-lineitem {
+	margin: 5px;
+}
+.input-lineitem {
+	width: 25%;
+}
+
+.header-lineitem {
+	text-align: center;
+	margin: 10px;
+}
+.delete-lineitem {
+	color: red;
+	padding: 5px;
+}
+.edit-lineitem {
+	color: green;
+	padding: 5px;
+}
