@@ -1,6 +1,16 @@
 {
-  "main.css": "static/css/main.b0ef9108.css",
-  "main.css.map": "static/css/main.b0ef9108.css.map",
-  "main.js": "static/js/main.d08aee62.js",
-  "main.js.map": "static/js/main.d08aee62.js.map"
+  "files": {
+    "main.css": "/vintool/static/css/main.4d0dcd33.chunk.css",
+    "main.js": "/vintool/static/js/main.78325184.chunk.js",
+    "main.js.map": "/vintool/static/js/main.78325184.chunk.js.map",
+    "runtime~main.js": "/vintool/static/js/runtime~main.037a7723.js",
+    "runtime~main.js.map": "/vintool/static/js/runtime~main.037a7723.js.map",
+    "static/js/2.17e24b86.chunk.js": "/vintool/static/js/2.17e24b86.chunk.js",
+    "static/js/2.17e24b86.chunk.js.map": "/vintool/static/js/2.17e24b86.chunk.js.map",
+    "index.html": "/vintool/index.html",
+    "precache-manifest.857fd65fa4acde5e9939f8ad73d472d0.js": "/vintool/precache-manifest.857fd65fa4acde5e9939f8ad73d472d0.js",
+    "service-worker.js": "/vintool/service-worker.js",
+    "static/css/main.4d0dcd33.chunk.css.map": "/vintool/static/css/main.4d0dcd33.chunk.css.map",
+    "static/media/bg.png": "/vintool/static/media/bg.bed17ad2.png"
+  }
 }
