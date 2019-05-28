@@ -15,7 +15,7 @@ const routing = (
 			<Navbar />
 			<Switch>
 				<Route exact path='/' component={App} />
-				<Route path='/settings/' component={Settings} />
+				<Route path='/vintool/settings/' component={Settings} />
 			</Switch>
 		</div>
 	</Router>

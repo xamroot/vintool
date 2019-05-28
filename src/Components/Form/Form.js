@@ -96,9 +96,15 @@ class Form extends Component {
 			totalToPrint.push(lineitem.total.toString());
 		});
 
+
+		doc.text(5, 85, "Name")
+		doc.text(60, 85, "Quantity")
+		doc.text(115, 85, "Units")
+		doc.text(170, 85, "Unit Price")
+		doc.text(225, 85, "Total")
 	    for(let i = 0; i < namesToPrint.length; i++){
 	    	let xVal = 5;
-	    	let yVal = 80 + (10 * i);
+	    	let yVal = 100 + (10 * i);
 	    	doc.text(xVal, yVal, namesToPrint[i]);
 	    	doc.text(xVal + 55, yVal, qtyToPrint[i]);
 	    	doc.text(xVal + 110, yVal, unitsToPrint[i]);

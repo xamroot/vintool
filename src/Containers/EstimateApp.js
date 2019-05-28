@@ -4,6 +4,7 @@ import Trucking from '../Components/Trucking/Trucking';
 import Material from '../Components/Material/Material';
 import LaborAndEquipment from '../Components/LaborAndEquipment/LaborAndEquipment';
 import Margin from '../Components/Margin/Margin';
+import bg from './bg.png';
 
 class EstimateApp extends Component {
 	state = {

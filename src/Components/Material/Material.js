@@ -14,6 +14,7 @@ class Material extends Component {
 		materials: ['1100L', '1100T', '11A', '13A', '36A', '2C', '3C', '4C', '23A', '22AA', 'Milings', 'Tack-Coat'],
 		tons: 0,
 		cost: 0,
+		costWithTax: 0,
 		countys: {
 "Washtenaw": {
 	"Cadillac_Ann_Arbor": {
@@ -277,7 +278,6 @@ class Material extends Component {
 		})
 
 		let cost = this.state.countys[county][plant][material];
-
 		this.setState({
 			selectedMaterial: e.target.value,
 			costPerUnit: cost
@@ -295,22 +295,19 @@ class Material extends Component {
 		let totalAmount = 0;
 		let totalCost = 0;
 		let costPerUnit = 0;
-
+		let tax = 1.06;
 		costPerUnit = this.state.costPerUnit;
 		sqrFootage = this.state.sqrFootage;
 		depth = this.state.depth;
 
-		sqrYards = sqrFootage / 9;
-		cubicYards = sqrYards / (36 / depth);
-		tons = cubicYards * TONNAGE_MULTIPLIER;
-
-		totalAmount = parseFloat((sqrFootage / 109) * (depth / 1.5)).toFixed(2);
-		totalCost = parseFloat(totalAmount * costPerUnit).toFixed(2);
-		console.log(costPerUnit);	
+		tons = (sqrFootage / 109) * (depth / 1.5);
+		totalCost = parseFloat(tons * costPerUnit).toFixed(2);
+		let costWithTax = parseFloat(totalCost * tax).toFixed(2);
 
 		this.setState({
 			tons: tons,
-			cost: totalCost
+			cost: totalCost,
+			costWithTax
 		})
 	}
 
@@ -400,7 +397,7 @@ class Material extends Component {
 					<div className='w-100 mb-2' />
 				</div>
 				<button className='btn btn-warning' onClick={this.enterHandler}>Enter</button>
-				<MaterialOutput tons={this.state.tons} cost={this.state.cost}/>
+				<MaterialOutput tons={this.state.tons} cost={this.state.cost} costWithTax={this.state.costWithTax} />
 			</div>
 			);
 	}

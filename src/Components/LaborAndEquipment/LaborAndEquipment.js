@@ -175,11 +175,11 @@ class LaborAndEquipment extends Component {
 		this.state.listitems.forEach(i => {
 			console.log(i);
 			if (i.price === undefined) {
-				laborCost += i.wage;
-				totalLECost += i.wage;
+				laborCost = parseFloat(laborCost) + parseFloat(i.wage);
+				totalLECost = parseFloat(totalLECost) + parseFloat(i.wage);
 			} else {
-				equipCost += i.price;
-				totalLECost += i.price;
+				equipCost = parseFloat(equipCost) + parseFloat(i.price);
+				totalLECost = parseFloat(totalLECost) + parseFloat(i.price);
 			}
 		})
 

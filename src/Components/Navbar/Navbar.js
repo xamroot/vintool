@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 let Navbar = props => {
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-			<h2 className='mr-5 ml-3' style={{color:'#ffc107'}}> Pern Tool </h2>
+			<h2 className='mr-5 ml-3' style={{color:'#ffc107'}}> Vin-Tool </h2>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
