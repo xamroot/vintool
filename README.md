@@ -1,6 +1,6 @@
 Formulas
 -------------------------
-- Trucking
+- Trucking\n
 average_load = ((num_of_tri_trucks * 12) + (num_of_quad_trucks * 16) + (num_of_semi_trucks * 24) + (num_of_train_trucks * 40) / number_of_all_trucks)
 
 total_truck_rate = (num_of_tri_trucks * 85) + (num_of_quad_trucks * 95) + num_of_semi_trucks * 105) + num_of_train_trucks * 145)
