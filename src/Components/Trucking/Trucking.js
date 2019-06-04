@@ -11,9 +11,7 @@ class Trucking extends Component {
 		quadTrucks: 0,
 		semiTrucks: 0,
 		trainTrucks: 0,
-		startToPlant: 0,
 		plantToJob: 0,
-		jobToStart: 0,
 		looseYards: 0,
 		fluffFactor: 'Asphalt',
 		pricePerLooseYardage: 0
@@ -57,25 +55,18 @@ class Trucking extends Component {
 		var costTrain =  TRAIN_TRUCK_COST * numTrain;
 		
 		var total = costTri + costQuad + costSemi + costTrain;
-		// r o r y eats c o c k 4money : O ~ ~ ~ ~C===3
 		return total;
 	}
 
 
 	roundTripTime = (distancePTJ) => {
-		distancePTJ = distancePTJ / 60;
-		let buffer = 0.5;
-		
-		let roundTripTime = ((distancePTJ * 2) + 0.5);
-		return roundTripTime;
+		return (distancePTJ / 60) * 2;
 	}
 
 
 	roundsPerHour = (roundTripTime, numTri, numQuad, numSemi, numTrain) => {
-		var totalTrucks = numTri + numQuad + numSemi + numTrain;
-		
-		var roundsPerHour = totalTrucks / roundTripTime;
-		return roundsPerHour;
+		let totalTrucks = numTri + numQuad + numSemi + numTrain;
+		return totalTrucks / roundTripTime;
 	}
 
 
@@ -111,10 +102,8 @@ class Trucking extends Component {
 	}
 
 
-	getPricePerLY = (totalLabor, totalEquipment, totalTrucking, avgLoad, roundsPerHour, looseYd) => {
-		let pricePerLooseYardage = 0;
-		pricePerLooseYardage = (totalLabor + totalEquipment + totalTrucking) / (avgLoad * roundsPerHour);
-		return pricePerLooseYardage + 10;
+	getPricePerLY = (totalTrucking, avgLoad, roundsPerHour, looseYd) => {
+		return totalTrucking / (avgLoad * roundsPerHour);
 	}
 
 
@@ -128,13 +117,7 @@ class Trucking extends Component {
 		let numQuad = this.state.quadTrucks;
 		let numSemi = this.state.semiTrucks;
 		let numTrain = this.state.trainTrucks;
-
-		let distanceSTP = this.state.startToPlant;
 		let distancePTJ = this.state.plantToJob;
-		let distanceJTS = this.state.jobToStart;
-
-		let totalLabor = 0;
-		let totalEquipment = 0;
 
 		//Step1. Get the average load and truck rate
 		let averageLoad = this.getAverageLoad(numTri, numQuad, numSemi, numTrain);
@@ -151,7 +134,7 @@ class Trucking extends Component {
 		let looseYards = this.calculateLooseYardage(cubicYards, fluff);
 		
 		//Step5. Get the price per loose yardage
-		let pricePerLooseYardage = this.getPricePerLY(totalLabor, totalEquipment, truckRate, averageLoad, roundsPerHour, looseYards)
+		let pricePerLooseYardage = this.getPricePerLY(truckRate, averageLoad, roundsPerHour, looseYards)
 		this.setState({
 			pricePerLooseYardage: pricePerLooseYardage, 
 			looseYards: looseYards
@@ -214,13 +197,6 @@ class Trucking extends Component {
 						<option value='Dirt'>Dirt</option>
 						<option value='Sand'>Sand</option>
 					</select>
-					<div className='w-100 mb-2' />
-					<input className='form-control' onChange={this.onSTPInputChangeHandler} placeholder='Start -> Plant Distance' />
-					<div className='w-100 mb-2' />
-					<input className='form-control' onChange={this.onPTJInputChangeHandler} placeholder='Plant -> Job Distance' />
-					<div className='w-100 mb-2' />
-					<input className='form-control' onChange={this.onJTSInputChangeHandler} placeholder='Job -> Start Distance' />
-					<div className='w-100 mb-2' />
 				</div>
 				<div>
 					<button type="button" className="btn btn-warning" onClick={this.enterHandler}>Calculate</button>
